@@ -143,5 +143,13 @@ package.targets.append(contentsOf: [
 
 // MARK: - test tools
 package.targets.append(contentsOf: [
-  .testTarget(name: "AppStoreSnapshot")
+  .testTarget(
+    name: "AppStoreSnapshotTests",
+    dependencies: [
+      .product(name: "SnapshotTesting", package: "SnapshotTesting"),
+    ],
+    exclude: [
+      "__Snapshots__"
+    ]
+  )
 ])
